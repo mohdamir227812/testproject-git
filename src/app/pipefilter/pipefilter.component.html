@@ -1,0 +1,30 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md">
+            <div class="form-group">
+                <input type="text" placeholder="search..." class="form-control" [(ngModel)]="searchItem">
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr>
+                    <th>postId</th>
+                    <th>Id</th>
+                    <th>name</th>
+                    <th>email</th>
+                    <th>body</th>
+                    
+                </tr>
+                <tr *ngFor="let placeData of placeholderUserData | pipefil:searchItem" >
+                    <td>{{placeData.postId}}</td>
+                    <td>{{placeData.id}}</td>
+                    <td>{{placeData.name}}</td>
+                    <td>{{placeData.email}}</td>
+                    <td>{{placeData.body}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

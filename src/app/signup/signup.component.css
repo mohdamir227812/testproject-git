@@ -1,0 +1,16 @@
+.info{
+    color: pink;
+}
+.danger{
+    color: red;
+}
+.warning{
+    color:yellow;
+}
+.success{
+    color: green;
+}
+
+.secondry{
+    color: darkgray;
+}

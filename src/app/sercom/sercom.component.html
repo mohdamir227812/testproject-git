@@ -1,0 +1,41 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-5">
+              <form #formcontrol="ngForm">
+                <div class="form-group">
+                    <label for="uname" class="form-label">name:</label>
+                    <input type="text" class="form-control" placeholder="userName" ngModel name="name" id="name">
+                </div>
+
+                <div class="form-group">
+                    <label for="technology" class="form-label">technology:</label>
+                    <input type="text" placeholder="userName" class="form-control" ngModel id="technology" name="technology">
+                </div>
+                <div>
+                    <button type="button" class="btn btn-success"
+                     (click)="addUserSubmit(formcontrol.value);formcontrol.reset()">{{"adduserandedidt? 'Edet': 'add user'"}}</button>
+                     <button class="btn btn-danger" type="button" (click)="getdataFirebase()">get data</button>
+                </div>
+              </form>
+        </div>
+        <div class="col-md-5">
+            <table class="table">
+                <tr>
+                    <th>name:</th>
+                    <th>technology</th>
+                    <th>update</th>
+                    <th>delete</th>
+                
+
+                </tr>
+                <tr *ngFor="let uData of userget; index as i">
+                    <td>{{uData.name}}</td>
+                    <td>{{uData.technology}}</td>
+                    <td class="pointer" (click)="updatefirebasedata(i)">update</td>
+                    <td class="btn btn-danger" (click)="deletedatafirebase(uData.userId)">delete</td>
+                
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>

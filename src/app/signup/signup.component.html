@@ -1,0 +1,23 @@
+
+<div class="container">
+  <div>
+    <input type="text" (keyup)="textSize($event)">
+  </div>
+  <p [style.fontSize.px]="texts" [class]="textCo">  {{text}} </p>
+  <hr>
+  <p>text size: {{texts}}:px</p>
+  <div>
+    <button class="btn btn-success" (click)="textsizeInDe('inc')">++</button>
+    <button class="btn btn-success" (click)="textsizeInDe('dec')">--</button>
+  </div>
+
+  <div>
+    <select (change)="textColor($event)">
+      <option value="info">info</option>
+      <option value="danger">danger</option>
+      <option value="warning">warning</option>
+      <option value="success">success</option>
+      <option value="secondry">secondry</option>
+    </select>
+  </div>
+</div>
